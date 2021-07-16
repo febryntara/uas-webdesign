@@ -6,8 +6,9 @@ function Product({ product }) {
   return (
     <div className="m-product">
       <img
-        src={`http://localhost:1337${product.image.formats.large.url}`}
+        src={product.image}
         alt={`${product.judul}`}
+        loading="lazy"
       />
       <h5>{product.judul}</h5>
       <button className="m-button">

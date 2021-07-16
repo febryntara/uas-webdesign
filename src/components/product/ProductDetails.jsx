@@ -11,6 +11,7 @@ function ProductDetails() {
       setProduct(res);
       console.log(product);
       setIsLoading(false);
+      // console.log(product[0].image);
     });
   }, []);
   if (isLoading === true) {
@@ -25,15 +26,14 @@ function ProductDetails() {
       <h3 className="m-button">PRODUCT DETAILS</h3>
       <div className="m-details-box">
         <div className="m-details-image">
-          <img
-            src={`http://localhost:1337${product.image.formats.large.url}`}
-            alt={`${product.judul}`}
-          />
+          <img src={product.image} alt={`${product.judul}`} loading="lazy" />
         </div>
         <div className="m-details-info">
           <h3>{product.judul}</h3>
           <p>{product.description}</p>
-          <p><b>Rp. {product.price}</b></p>
+          <p>
+            <b>Rp. {product.price}</b>
+          </p>
           <button className="m-button">
             <Link to="/products" className="m-link">
               Back

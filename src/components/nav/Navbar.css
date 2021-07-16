@@ -1,0 +1,110 @@
+.m-nav-container {
+  background-color: #50cff8;
+  text-align: center;
+  padding: 5px 0;
+  /* position: relative; */
+}
+.m-nav-container > h3 {
+    color: white;
+  text-shadow: 2px 2px 1px rgba(255, 184, 0, 0.64);
+  /* position: absolute; */
+}
+.m-nav-toggle {
+  position: fixed;
+  transform: scale(1);
+  display: none;
+  width: 20px;
+  right: 2px;
+  top: 2px;
+}
+.m-nav-toggle > input {
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  display: block;
+  opacity: 0;
+  transform: scale(1.8);
+  z-index: 100 !important;
+}
+.m-nav-toggle > div {
+  position: absolute;
+  top: 0;
+}
+.m-nav-toggle > div > span {
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin: 3px 0;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 10%;
+}
+.m-nav-toggle > input:checked + div > span:first-child {
+  transform: rotate(45deg) translate(1px, 4px);
+}
+.m-nav-toggle > input:checked + div > span:nth-child(2) {
+  transform: scale(0);
+}
+.m-nav-toggle > input:checked + div > span:last-child {
+  transform: rotate(-45deg) translate(5px, -8px);
+}
+.m-nav-items {
+  width: 30%;
+  margin: 0 auto;
+  /* background-color: white; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 80px));
+  list-style: none;
+  justify-items: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+.m-nav-items > li {
+  text-align: center;
+  display: block;
+  width: 100%;
+  /* background-color: red; */
+}
+.m-nav-link {
+  transition: 0.1s;
+}
+.m-nav-link:hover {
+  border-bottom: 3px solid white;
+}
+/* .m-nav-link:active {
+  transform: scale(.8);
+} */
+
+@media (max-width: 576px) {
+  .m-nav-container {
+    position: relative;
+  }
+  .m-nav-container > h3 {
+    text-align: left;
+    margin-left: 5px;
+  }
+  .m-nav-toggle {
+    position: fixed;
+    display: inherit;
+    margin: 5px 10px;
+    z-index: 100 !important;
+  }
+  .m-nav-items {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    padding-top: 50px;
+    background-color: #50cff8;
+    top: 0;
+    left: 0;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 50px;
+    align-items: center;
+    transform: translateY(-100%);
+    z-index: 90;
+  }
+  .m-nav-restore {
+    transform: translateY(0%);
+  }
+}
