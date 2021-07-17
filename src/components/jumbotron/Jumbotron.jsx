@@ -1,5 +1,6 @@
 import React from "react";
 import "./Jumbotron.css";
+import {Link} from "react-router-dom"
 
 function Jumbotron() {
   return (
@@ -23,7 +24,7 @@ function Jumbotron() {
         />
         <div className="m-jumbotron-content">
           <p>All item using natural ingredients Dont worry, be HAPPY!</p>
-          <button className="m-button">Products</button>
+          <button className="m-button"><Link to="/products" className="m-link">Products</Link></button>
         </div>
       </div>
     </div>
