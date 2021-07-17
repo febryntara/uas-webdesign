@@ -5,13 +5,14 @@
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   background-color: #F9F7F7;
+  color: white;
 }
 
 code {
@@ -28,7 +29,7 @@ img {
   padding: 5px;
   margin: 5px;
   background-color: #9d9bf4;
-  box-shadow: 5px 5px 10px rgba(255, 184, 0, 0.9);
+  box-shadow: 4px 4px 3px rgba(255, 184, 0, 0.9);
   transition: 0.3s;
 }
 .m-button:active {
