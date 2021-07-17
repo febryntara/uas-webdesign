@@ -1,5 +1,6 @@
 // LIBRARY
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from "./components/footer/Footer";
 // COMPONENT
 import Navbar from './components/nav/Navbar'
 import ProductDetails from "./components/product/ProductDetails";
@@ -20,6 +21,7 @@ function App() {
           <ProductDetails />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }

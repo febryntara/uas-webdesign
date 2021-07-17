@@ -12,6 +12,7 @@ function Navbar() {
     });
     navItems.addEventListener("click", function () {
       navItems.classList.remove("m-nav-restore");
+      document.querySelector(".m-nav-toggle > input").checked = false;
     });
   }, []);
   return (

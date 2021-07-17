@@ -33,8 +33,8 @@ function NewArrival() {
         </p>
       </div>
       <div className="m-arrival-box">
-        {newArrival.map((arr) => (
-            <div className="m-arrival-content">
+        {newArrival.map((arr, index) => (
+            <div key={index} className="m-arrival-content">
                 <img src={arr.image} alt={arr.judul} />
                 <h5>{arr.judul}</h5>
                 <p>Rp. {arr.price}</p>

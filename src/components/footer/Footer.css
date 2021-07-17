@@ -1,0 +1,25 @@
+.m-footer {
+    background-color: #50CFF8;
+    text-align: center;
+    padding: 20px 0;
+    padding-bottom: 0px;
+    margin-bottom: -30px;
+}
+.m-footer > h3 {
+    text-shadow: 4px 4px 3px rgba(255, 184, 0, 0.9);
+}
+.m-footer > p {
+    margin-top: 10px;
+}
+.m-footer-icons {
+    margin: 10px 0px;
+}
+.m-footer-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: .2s;
+    margin: 0 3px;
+}
+.m-footer-icon:active {
+    transform: scale(.8);
+}
