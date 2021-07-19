@@ -1,0 +1,24 @@
+.m-about {
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.m-about-content {
+    padding: 0 50px;
+}
+.m-about-content > h2,h4,h5 {
+    margin-bottom: 10px;
+}
+.m-about-content > p {
+    margin-bottom: 15px;
+}
+
+@media (max-width:576px){
+    .m-about-content {
+        padding: 0 15px;
+    }
+}

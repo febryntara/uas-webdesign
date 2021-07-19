@@ -12,6 +12,13 @@ function ProductList() {
       .catch((err) => console.log(err));
     console.log(products);
   }, []);
+  useEffect(() => {
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+    topFunction();
+  }, []);
   return (
     <div className="m-productlist">
         <h3>OUR PRODUCTS</h3>

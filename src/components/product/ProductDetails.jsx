@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ProductAPI from "../../config/productAPI/ProductAPI";
 
-function ProductDetails() {
+function ProductDetails({getProduct, delProduct}) {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
@@ -13,6 +13,13 @@ function ProductDetails() {
       setIsLoading(false);
       // console.log(product[0].image);
     });
+  }, []);
+  useEffect(() => {
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+    topFunction();
   }, []);
   if (isLoading === true) {
     return (
@@ -39,7 +46,7 @@ function ProductDetails() {
               Back
             </Link>
           </button>
-          <button className="m-button">Add To Bag</button>
+          <button onClick={()=> getProduct(product.id)} className="m-button">Add To Bag</button>
         </div>
       </div>
     </div>

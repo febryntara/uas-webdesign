@@ -17,13 +17,13 @@ function Footer() {
         <AiFillFacebook className="m-footer-icon"/>
       </div>
       <button className="m-button">
-        <Link className="m-link">About Us</Link>
+        <Link to="/about" className="m-link">About Us</Link>
       </button>
       <button className="m-button">
-        <Link className="m-link">Product</Link>
+        <Link to="/products" className="m-link">Products</Link>
       </button>
       <button className="m-button">
-        <Link className="m-link">Contact Us</Link>
+        Contact Us
       </button>
       <p>&copy; I Gede Bagus Febryntara. <strong>99% full funcionality</strong></p>
     </div>
