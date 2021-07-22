@@ -12,22 +12,70 @@ import Bag from "./pages/bag/Bag";
 import MainPage from "./pages/mainPage/MainPage";
 function App() {
   const [bag, setBag] = useState([]);
+  const [count, setCount] = useState(1);
   const getProduct = (id) => {
     ProductAPI.detail(id)
       .then((res) => {
-       setBag([...bag, {index: bag.length, judul: res.judul, price: res.price, image: res.image}])
+        // if (bag.length === 0) {
+        //   setCount(1);
+        //   setBag([
+        //     ...bag,
+        //     {
+        //       index: bag.length,
+        //       judul: res.judul,
+        //       price: res.price,
+        //       image: res.image,
+        //       count: count,
+        //     },
+        //   ]);
+        //   console.log("data baru");
+        // } else {
+        //   setCount((prevCount) => prevCount + 1);
+        //   if (res.judul === bag[bag.length - 1].judul) {
+        //     console.log("data lama");
+        //     const updated = bag
+        //       .filter((data) => data.judul !== res.judul)
+        //       .map((data) => data);
+        //     setBag([
+        //       ...updated,
+        //       {
+        //         index: bag.length,
+        //         judul: res.judul,
+        //         price: res.price,
+        //         image: res.image,
+        //         count: count,
+        //       },
+        //     ]);
+        //   }
+        // }
+        setBag([
+          ...bag,
+          {
+            index: bag.length,
+            judul: res.judul,
+            price: res.price,
+            image: res.image,
+            count: count,
+          },
+        ]);
       })
       .catch((err) => console.log(err));
-      alert("Product Added! Check Your BAG!")
-  }
+    alert("Product Added! Check Your BAG!");
+  };
   const delProduct = (id) => {
-    const dialog = window.confirm(`Are you sure want to delete ${bag[id].judul}?`);
-    if(dialog === true){
-      const renew = bag.filter((data) => data.index !== id).map((data)=> {return data});
+    const dialog = window.confirm(
+      `Are you sure want to delete ${bag[id].judul}?`
+    );
+    if (dialog === true) {
+      const renew = bag
+        .filter((data) => data.index !== id)
+        .map((data) => {
+          return data;
+        });
       setBag([...renew]);
     }
-    
-  }
+  };
+  const countProduct = () => {};
   return (
     <Router>
       <Navbar />
@@ -39,14 +87,22 @@ function App() {
           <ProductList />
         </Route>
         <Route exact path="/products-:id">
-          <ProductDetails getProduct={getProduct}/>
+          <ProductDetails getProduct={getProduct} />
         </Route>
         <Route path="/about">
           <About />
         </Route>
         <Route path="/bag">
-          <Bag products={bag} delProduct={delProduct}/>
+          <Bag products={bag} delProduct={delProduct} />
         </Route>
+        <Route
+          path="/contact-us"
+          component={() => {
+            window.location.href =
+              "https://api.whatsapp.com/send?phone=6281353783536&text=Saya%20mau%20bertanya%20min";
+            return null;
+          }}
+        />
       </Switch>
       <Footer />
     </Router>

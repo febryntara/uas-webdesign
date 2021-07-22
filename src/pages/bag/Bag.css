@@ -1,54 +1,83 @@
 .m-bag {
-    width: 100%;
-    /* background-color: black; */
+  width: 100%;
+  /* background-color: black; */
 }
 .m-bag-box {
-    width: 100%;
-    /* background-color: rgb(94, 20, 20); */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
-    min-height: 60vh;
-    gap: 10px;
-    padding: 20px 10px;
+  width: 100%;
+  /* background-color: rgb(94, 20, 20); */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+  min-height: 60vh;
+  gap: 10px;
+  padding: 20px 10px;
 }
 .m-bag-alert {
-    text-align: center;
-    color: black;
-    height: 60vh;
-    line-height: 60vh;
+  text-align: center;
+  color: black;
+  height: 60vh;
+  line-height: 60vh;
 }
 .m-items {
-    text-align: center;
-    background-color: #FFC7C7;
-    height: min-content;
-    padding-bottom: 5px;
+  text-align: center;
+  background-color: #ffc7c7;
+  height: min-content;
+  padding-bottom: 5px;
 }
 .m-items > img {
-    width: 90%;
-    margin: 5px auto;
+  width: 90%;
+  margin: 5px auto;
 }
 .m-items > input {
-    width: 30px;
+  width: 30px;
 }
 .m-items > h4 {
-    font-size: 1em;
-    margin-bottom: 2px;
+  font-size: 1em;
+  margin-bottom: 2px;
 }
 .m-items > p {
-    margin: 0;
+  margin: 0;
 }
 .m-bag-button {
-    display: block;
-    margin: 20px auto;
+  display: block;
+  margin: 20px auto;
+}
+.m-popup {
+  /* width: 100%; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(80, 207, 248, 0.4);
+}
+.m-popup-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  /* margin: auto; */
+  background-color: #50cff8;
+}
+.m-popup-box > button {
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 5px;
 }
 
-@media (max-width:576px) {
-    .m-bag-box {
-        grid-template-columns: 1fr;
-        /* background-color: red; */
-    }
-    .m-bag-alert {
-        height: 75vh;
-        line-height: 75vh;
-    }
+@media (max-width: 576px) {
+  .m-bag-box {
+    grid-template-columns: 1fr;
+    /* background-color: red; */
+  }
+  .m-bag-alert {
+    height: 75vh;
+    line-height: 75vh;
+  }
+  .m-popup-box {
+    width: 100%;
+  }
 }

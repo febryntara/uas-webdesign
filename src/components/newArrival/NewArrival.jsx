@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductAPI from "../../config/productAPI/ProductAPI";
+import { Link } from "react-router-dom";
 import "./NewArrival.css";
 function NewArrival() {
   const [arrival, setArrival] = useState([]);
@@ -9,7 +10,7 @@ function NewArrival() {
     ProductAPI.find()
       .then((res) => {
         setArrival(res);
-        setNewArrival(res.slice((res.length-3),res.length));
+        setNewArrival(res.slice(res.length - 3, res.length));
         setIsLoading(false);
       })
       .catch((err) => console.log(err));
@@ -34,12 +35,14 @@ function NewArrival() {
       </div>
       <div className="m-arrival-box">
         {newArrival.map((arr, index) => (
-            <div key={index} className="m-arrival-content">
-                <img src={arr.image} alt={arr.judul} />
-                <h5>{arr.judul}</h5>
-                <p>Rp. {arr.price}</p>
-                <button className="m-button">Details</button>
-            </div>
+          <div key={index} className="m-arrival-content">
+            <img src={arr.image} alt={arr.judul} />
+            <h5>{arr.judul}</h5>
+            <p>Rp. {arr.price}</p>
+            <Link to={`/products-${arr.id}`} className="m-button m-link">
+              Details
+            </Link>
+          </div>
         ))}
       </div>
     </div>
